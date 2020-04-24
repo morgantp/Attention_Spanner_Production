@@ -5,8 +5,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var bcrypt = require('bcryptjs');
 
-var Contact = require('./models/Contact');
-var User = require('./models/User');
+var User = require('./models/User.js');
 
 app.set('view engine', 'hbs');
 app.engine('hbs', handlebars({
@@ -23,19 +22,8 @@ app.get ('/', (req, res) =>{
     res.render('login', { layout: 'main' });
 })
 
-app.get('/', (req, res) => {
-    Contact.find({}).lean()
-        .exec((err, contacts) =>{
-            if(contacts.length){
-            res.render('dashboard', { layout: 'main', contacts: contacts, contactsExist: true }); 
-            }else{
-            res.render('dashboard', { layout: 'main', contacts: contacts, contactsExist: false });
-            }
-        })
-});
-
 app.post('/signup', async (req, res) =>{
-    const { username, password } = req.body;
+    const { email, username, password } = req.body;
     try {
         let user = await User.findOne({ username });
 
@@ -43,6 +31,7 @@ app.post('/signup', async (req, res) =>{
             return res.status(400).render('login', {layout: 'main', userExist: true});
         }
         user = new User({
+            email,
             username,
             password
         });
@@ -57,16 +46,6 @@ app.post('/signup', async (req, res) =>{
         console.log(err.message);
         res.status(500).send('Server Error')
     }  
-})
-
-app.post('/signin', (req, res) =>{
-    const { username, password } = req.body;
-    var contact = new Contact({
-        username,
-        password,
-    });
-    user.save();
-    res.redirect('/');
 })
 
 mongoose.connect('mongodb://localhost:27017/handlebars',{
