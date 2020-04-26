@@ -10,6 +10,10 @@ body {
     height: 100vh;
 }
 
+#signupForm {
+    width: 100%;
+}
+
 img {
     width: auto;
     height: 35%;
@@ -21,6 +25,10 @@ h1 {
     font-family: 'Share Tech Mono', monospace;
     color: white;
     font-size: 50px;
+}
+
+#signinHeader {
+    margin: 1.8rem 0 -1.32rem 0;
 }
 
 hr{
@@ -122,5 +130,8 @@ a:active {
     font-family: 'Share Tech Mono', monospace;
     text-align: center;
     color: black;
+    background-color: indianred;
+    margin-top: 10px;
   }
+
    

@@ -2,8 +2,13 @@
     <img src="assets/real_logo.png" alt="Attention Spanner Logo">
 
     <!-- sign in section -->
-    <h1>SIGN IN</h1>
+    <h1 id="signinHeader">SIGN IN</h1>
     <hr>
+    {{#if userExist}}
+    <div class ="card-panel red">User Already Exists</div>
+    {{else}} {{#if userDoesNotExist}}
+    <div class ="card-panel green">User Created! Congratulations</div>
+    {{/if}} {{/if}}
     {{> signinForm}}
 
     <a href="">Forgot Password?</a>

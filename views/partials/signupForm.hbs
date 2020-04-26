@@ -1,15 +1,13 @@
 
-{{#if userExist}}
-<div class ="card-panel red">User Already Exists</div>
-{{else}} {{#if userDoesNotExist}}
-<div class ="card-panel green">User Created! Congratulations</div>
-{{/if}} {{/if}}
-<form action="/signup" class="form-container" method="POST">
-    <h1>Create Account</h1>
-    <input type="email" name="email" id="email" placeholder="Enter Email">
-    <input type="text" name="username" id="username" placeholder="Enter Username">
-    <input type="password" name="password" id="password" placeholder="Enter Password">
-    <input type="password" name="password" id="confirmPassword" placeholder="Confirm Password">
-    <input type="submit" value="Submit" id="signUpSubmit" class="waves-effect waves-light btn-large">
-    <button id="closeButton" type="submit" class="waves-effect waves-light btn-large" onclick="closeForm()">Cancel</button>
-</form>
+<div class="form-container">
+    <form id="signupForm" class="form container" action="/signup" method="POST">
+        <h1>Create Account</h1>
+        <input type="email" name="email" id="email" placeholder="Enter Email">
+        <input type="text" name="username" id="username" placeholder="Enter Username">
+        <input type="password" name="password" id="password" placeholder="Enter Password">
+        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
+        <input type="submit" value="Submit" id="signUpSubmit" class="waves-effect waves-light btn-large">
+    </form>
+    <button id="closeButton" class="waves-effect waves-light btn-large" onclick="closeForm()">Cancel</button>
+    </div>
+{{!-- </form> --}}
