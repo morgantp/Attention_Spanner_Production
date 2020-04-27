@@ -1,0 +1,30 @@
+body {
+    background-color: lightgrey;
+}
+
+.navbar {
+    background-image: linear-gradient(darkblue, blue, darkblue);
+    display: flex;
+    align-items: baseline;
+}
+
+.img-responsive {
+    max-width: 35%;
+    height: auto;
+    display: block;
+}
+
+#accountIMG {
+    width: 8%;
+    height: auto;
+}
+
+#navLogo {
+    width: 30%;
+    height: auto;
+}
+
+#cogfeedIMG {
+    width: 30%;
+    padding-bottom: 3px;
+}
