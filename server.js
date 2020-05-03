@@ -35,8 +35,8 @@ app.get ('/', (req, res) =>{
     res.render('login', { layout: 'main' });
 })
 
-app.get ('/cogfeed', isAuth, (req, res) => {
-    res.render('cogfeed' , {layout: 'mainpage', username: req.user.username});
+app.get ('/cogfeed', (req, res) => {
+    res.render('cogfeed' , { layout: 'mainpage' });
 });
 
 app.post('/signup', async (req, res) =>{
@@ -69,7 +69,7 @@ app.post('/signin', (req, res, next) => {
     try{
         passport.authenticate('local', {
             successRedirect: '/cogfeed',
-            failureRedirect: '/'
+            failureRedirect: '/?unsuccessful'
         })(req, res, next);
     } catch (err){
         console.log(err.message);

@@ -3,7 +3,7 @@ body {
 }
 
 .navbar {
-    background-image: linear-gradient(darkblue, blue, darkblue);
+    background-color: darkblue;
     display: flex;
     align-items: baseline;
 }
@@ -15,16 +15,34 @@ body {
 }
 
 #accountIMG {
-    width: 8%;
+    width: 6%;
     height: auto;
 }
 
 #navLogo {
-    width: 30%;
+    width: 25%;
     height: auto;
 }
 
 #cogfeedIMG {
-    width: 30%;
+    width: 25%;
     padding-bottom: 3px;
+}
+
+#postIcon {
+    width: 35px;
+    height: auto;
+    padding-right: 10px;    
+}
+
+.btn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.btn-primary {
+    font: 10px;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: darkblue;
 }
