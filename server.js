@@ -6,8 +6,7 @@ var bodyParser = require('body-parser');
 var bcrypt = require('bcryptjs');
 var passport = require('passport');
 var session = require('express-session')
-const port = process.env.PORT || 3000;
-const mongoURL = process.env.mongoURL || 'mongodb://localhost:27017/handlebars'
+
 require('./middleware/passport')(passport);
 
 var { isAuth } = require('./middleware/isAuth')
@@ -79,7 +78,7 @@ app.post('/signin', (req, res, next) => {
     }
 })
 
-mongoose.connect('mongodb://localhost:27017/handlebars',{
+mongoose.connect(mongoURL, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
@@ -91,5 +90,5 @@ mongoose.connect('mongodb://localhost:27017/handlebars',{
 });
 
 app.listen(3000, () => {
-    console.log(`Server listening on port ${port}`);
+    console.log('Server listening on port 3000');
 });
