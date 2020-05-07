@@ -4,17 +4,17 @@ var handlebars = require('express-handlebars');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var bcrypt = require('bcryptjs');
-var passport = require('passport');
-var session = require('express-session');
+const passport = require('passport');
+const session = require('express-session');
 
 require('./middleware/passport')(passport);
 
-var { isAuth } = require('./middleware/isAuth');
+const { isAuth } = require('./middleware/isAuth');
 
-var User = require('./models/User.js');
+const User = require('./models/User.js');
 
 const port = process.env.PORT || 3000;
-const mongoURL = process.env.mongoURL || 'mongodb://localhost:27017/handlebars';
+// const mongoURL = process.env.mongoURL || 'mongodb://localhost:27017/handlebars';
 
 app.set('view engine', 'hbs');
 app.engine('hbs', handlebars({
@@ -96,7 +96,7 @@ app.post('/signin', (req, res, next) => {
     }
 })
 
-mongoose.connect(mongoURL, {
+mongoose.connect('mongodb+srv://morgantp:Password123@cluster0-z3iit.mongodb.net/AttentionSpanner?retryWrites=true&w=majority', {
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
@@ -108,5 +108,5 @@ mongoose.connect(mongoURL, {
 });
 
 app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
+    console.log(`Server listening on port ${3000}`);
 });
