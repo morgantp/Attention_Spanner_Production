@@ -5,13 +5,16 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var bcrypt = require('bcryptjs');
 var passport = require('passport');
-var session = require('express-session')
+var session = require('express-session');
 
 require('./middleware/passport')(passport);
 
-var { isAuth } = require('./middleware/isAuth')
+var { isAuth } = require('./middleware/isAuth');
 
 var User = require('./models/User.js');
+
+const port = process.env.PORT || 3000;
+const mongoURL = process.env.mongoURL || 'mongodb://localhost:27017/handlebars';
 
 app.set('view engine', 'hbs');
 app.engine('hbs', handlebars({
@@ -20,11 +23,14 @@ app.engine('hbs', handlebars({
 }))
 
 app.use(express.static('public'));
-app.use(session({
-    secret: 'mySecret',
-    resave: true,
-    saveUninitialized: true
-}))
+app.use(
+    session({
+        secret: 'mySecret',
+        resave: true,
+        saveUninitialized: true,
+        cookie: { maxAge: 60000 }
+    })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -32,13 +38,25 @@ app.use(passport.session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get ('/', (req, res) =>{
-    res.render('login', { layout: 'main' });
+app.get('/', (req, res) => {
+    try {
+        res.render('login', { layout: 'main' });
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send('Server Error')
+    }
 })
 
 app.get ('/cogfeed', (req, res) => {
-    res.render('cogfeed' , { layout: 'mainpage' });
-});
+    try {
+        res.render('cogfeed' , { layout: 'mainpage' });
+    } catch(err) {
+    console.log(err.message);
+    res.status(500).send('server error')
+    }
+})
+
+
 
 app.post('/signup', async (req, res) =>{
     const { email, username, password } = req.body;
