@@ -14,7 +14,7 @@ const { isAuth } = require('./middleware/isAuth');
 const User = require('./models/User.js');
 
 const port = process.env.PORT || 3000;
-// const mongoURL = process.env.mongoURL || 'mongodb://localhost:27017/handlebars';
+const mongoURL = process.env.mongoURL || 'mongodb://localhost:27017/handlebars';
 
 app.set('view engine', 'hbs');
 app.engine('hbs', handlebars({
@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 
 app.get ('/cogfeed', (req, res) => {
     try {
-        res.render('cogfeed' , { layout: 'mainpage' });
+        res.render('cogfeed' , { layout: 'mainpage', username: req.user.username });
     } catch(err) {
     console.log(err.message);
     res.status(500).send('server error')
@@ -96,7 +96,7 @@ app.post('/signin', (req, res, next) => {
     }
 })
 
-mongoose.connect('mongodb+srv://morgantp:Password123@cluster0-z3iit.mongodb.net/AttentionSpanner?retryWrites=true&w=majority', {
+mongoose.connect(mongoURL, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
