@@ -1,0 +1,98 @@
+body {
+    background-color: lightgrey;
+}
+
+
+
+a {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+    color: darkblue;
+}
+
+a:hover {
+    color: black;
+    transition: 1s;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-large {
+    background-color: darkblue;
+}
+
+input {
+    font-family: 'Share Tech Mono', monospace;
+    text-align: center;
+    color: white;
+}
+
+label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 30px;
+}
+
+textarea {
+    font-family: 'Share Tech Mono', monospace;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    font-size: 20px;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: darkblue;
+}
+
+.navbar {
+    background-color: darkblue;
+    display: flex;
+    align-items: baseline;
+}
+
+#buttonHolder {
+    text-align: center;
+}
+
+#accountIMG {
+    width: 35px;
+    height: auto;
+    padding-right: 10px;   
+}
+
+#accountButton {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+#cogfeedButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#navLogo {
+    width: 25%;
+    height: auto;
+}
+
+#workbenchIMG {
+    width: 36%;
+    padding-bottom: 3px;
+}

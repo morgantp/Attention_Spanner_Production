@@ -1,9 +1,16 @@
 <nav class="navbar">
-    <img id="navLogo" src="assets/navLogo.png" class="img-responsive">       
-    <img id="cogfeedIMG" src="assets/cogLogo.png" class="img-responsive">
-    <img id="accountIMG" src="assets/accountLogo.png" class="img-responsive">             
-</nav>
-<section id="container">
-    <h5>Welcome, {{username}}</h5>
-</section>
-<a class="btn btn-primary" href="#" role="button"><img id="postIcon" src="assets/postIcon.png">Make a Post</a>
+            <img id="navLogo" src="assets/navLogo.png" class="img-responsive">       
+            <img id="cogfeedIMG" src="assets/cogLogo.png" class="img-responsive">
+        </nav>
+        <a id="logoutButton" href="/signout">Log Out</a>
+        <section id="container">
+            <h5>Welcome, {{username}}</h5>
+            {{> postList}}
+            
+        </section>
+        <a id="accountButton" class="btn btn-primary" href="/account" role="button"><img id="accountIMG" src="assets/accountLogo.png">Account Page</a>
+        <a id="workbenchButton" class="btn btn-primary" href="/workbench" role="button"><img id="postIcon" src="assets/postIcon.png">Make a Post</a>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

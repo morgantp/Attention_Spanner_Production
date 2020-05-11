@@ -2,26 +2,6 @@ body {
     background-color: lightgrey;
 }
 
-h5 {
-    font-size: 40px;
-    font-family: 'Share Tech Mono', monospace;
-    color: black;
-    text-transform: uppercase;
-}
-
-p {
-    top: 5px;
-    font-family: 'Share Tech Mono', monospace;
-    color: white
-}
-
-#container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .navbar {
     background-color: darkblue;
     display: flex;
@@ -34,13 +14,65 @@ p {
     display: block;
 }
 
+#accountHeader{
+    background-color: lightskyblue;
+    max-width: 100%;
+}
+
+#accountLogo {
+    width: 15%;
+}
+
+h1 {
+    font-family: 'Share Tech Mono', monospace;
+    color: black;
+}
+
+#navLogo {
+    width: 25%;
+    height: auto;
+}
+
 #accountIMG {
+    width: 30%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#workbenchButton {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+#cogfeedButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+#postIcon {
+    width: 35px;
+    height: auto;
+    padding-right: 10px;    
+}
+
+.btn-primary {
+    font-size: 20px;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: darkblue;
+}
+
+#cogfeedIcon {
     width: 35px;
     height: auto;
     padding-right: 10px;   
 }
-
-
 
 a {
     font-family: 'Share Tech Mono', monospace;
@@ -51,40 +83,6 @@ a {
 a:hover {
     color: black;
     transition: 1s;
-}
-
-#navLogo {
-    width: 25%;
-    height: auto;
-}
-
-#cogfeedIMG {
-    width: 25%;
-    padding-bottom: 3px;
-}
-
-#postIcon {
-    width: 35px;
-    height: auto;
-    padding-right: 10px;    
-}
-
-#accountButton {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-}
-
-#workbenchButton {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-}
-
-.btn-primary {
-    font-size: 20px;
-    font-family: 'Share Tech Mono', monospace;
-    background-color: darkblue;
 }
 
 .postContainer {
