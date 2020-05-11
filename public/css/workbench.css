@@ -2,8 +2,6 @@ body {
     background-color: lightgrey;
 }
 
-
-
 a {
     font-family: 'Share Tech Mono', monospace;
     font-size: 20px;
@@ -48,7 +46,6 @@ form {
 }
 
 .btn-primary {
-    font-size: 20px;
     font-family: 'Share Tech Mono', monospace;
     background-color: darkblue;
 }
