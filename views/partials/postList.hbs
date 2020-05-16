@@ -1,8 +1,12 @@
 {{#if postsExist}}
 {{#each posts}}
+<a data-toggle="collapse" href="#collapseLocation">
 <div class="postContainer">
     <span class="title">{{this.title}}</span>
+    </a>
+    <div class="collapse" id="collapseLocation">
     <p>{{this.body}}</p>
+    </div>
     <p id="date">{{this.date}}</p>
 </div>
 {{/each}}
