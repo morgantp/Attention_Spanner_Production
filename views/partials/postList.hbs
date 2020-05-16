@@ -1,10 +1,10 @@
 {{#if postsExist}}
 {{#each posts}}
-<a data-toggle="collapse" href="#collapseLocation">
+<a data-toggle="collapse" href="#collapse{{this._id}}">
 <div class="postContainer">
     <span class="title">{{this.title}}</span>
     </a>
-    <div class="collapse" id="collapseLocation">
+    <div class="collapse" id="collapse{{this._id}}">
     <p>{{this.body}}</p>
     </div>
     <p id="date">{{this.date}}</p>
