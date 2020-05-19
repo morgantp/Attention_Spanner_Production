@@ -48,12 +48,15 @@ h1 {
     position: fixed;
     bottom: 10px;
     left: 10px;
+    font-size: 12px;
 }
 
 #cogfeedButton {
     position: fixed;
     bottom: 10px;
     right: 10px;
+    font-size: 12px;
+
 }
 
 #postIcon {
@@ -95,20 +98,46 @@ a:hover {
     overflow-wrap: break-word;
 }
 
+p {
+    margin-bottom: 0;
+    font-family: 'Share Tech Mono', monospace;
+    color: black;
+    font-size: 17px;
+}
+
 #date {
     font-family: 'Share Tech Mono', monospace;
     color: black;
     font-size: 10px;
+    text-align: center;
+    margin-bottom: 0;
 }
 
-p {
+#name {
     font-family: 'Share Tech Mono', monospace;
     color: black;
-    font-size: 17px;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .title {
     font-family: 'Share Tech Mono', monospace;
     color: black;
     font-size: 25px;
+}
+
+.likesButton {
+    font-family: 'Share Tech Mono', monospace;
+    background-color: black;
+    color: white;
+    border-style: none;
+    border-radius: 5px;
+    float: left;
+}
+
+.likeCounter {
+    float: left;
+    font-family: 'Share Tech Mono', monospace;
 }

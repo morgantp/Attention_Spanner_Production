@@ -70,12 +70,16 @@ form {
     position: fixed;
     bottom: 10px;
     left: 10px;
+    font-size: 12px;
+
 }
 
 #cogfeedButton {
     position: fixed;
     bottom: 10px;
     right: 10px;
+    font-size: 12px;
+
 }
 
 .img-responsive {

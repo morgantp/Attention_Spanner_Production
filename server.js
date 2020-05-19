@@ -143,12 +143,14 @@ app.post('/addPost', (req, res) => {
     }
 })
 
-app.put('/like/:_id', isAuth, (req, res) => {
+app.post('/likes/:id', async (req, res) => {
     try {
-       let post = Post.findById(req.params._id)
-       post.likes.unshift({user:req.user.id})
-
-        post.save()
+        //console.log(req.params.id)
+        await Post.findOneAndUpdate({_id: req.params.id }, {
+           $addToSet: {
+              likes: mongoose.Types.ObjectId(req.user.id)
+           }
+        });
         res.redirect('/cogfeed');
     } catch (err) {
         console.log(err.message);
