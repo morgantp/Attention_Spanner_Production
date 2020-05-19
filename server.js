@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 
 app.get ('/cogfeed', isAuth, (req, res) => {
     try {
-        Post.find({}).lean().exec((err, posts) => {
+        Post.find({}).lean().sort({date: -1}).exec((err, posts) => {
             if (posts.length) {
         res.render('cogfeed' , { layout: 'cogpage', posts: posts, postsExist: true, username: req.user.username });  
     } else {
@@ -64,7 +64,7 @@ app.get ('/cogfeed', isAuth, (req, res) => {
 
 app.get ('/account', isAuth, (req, res) => {
     try {
-        Post.find({ user: req.user.id }).lean().exec((err, posts) => {
+        Post.find({ user: req.user.id }).lean().sort({date: -1}).exec((err, posts) => {
             if (posts.length) {
         res.render('account' , { layout: 'accountpage', posts: posts, postsExist: true, username: req.user.username });  
     } else {
@@ -130,9 +130,23 @@ app.post('/addPost', (req, res) => {
     try {
         let post = new Post({
             user: req.user.id,
+            username: req.user.username,
             title,
             body
         });
+
+        post.save()
+        res.redirect('/cogfeed');
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send('Server Error')
+    }
+})
+
+app.put('/like/:_id', isAuth, (req, res) => {
+    try {
+       let post = Post.findById(req.params._id)
+       post.likes.unshift({user:req.user.id})
 
         post.save()
         res.redirect('/cogfeed');

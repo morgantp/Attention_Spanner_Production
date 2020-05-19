@@ -7,7 +7,16 @@
     <div class="collapse" id="collapse{{this._id}}">
     <p>{{this.body}}</p>
     </div>
+    <p id="date">Posted By {{this.username}}</p>
     <p id="date">{{this.date}}</p>
+    <button id="{{this._id}}" href="/likes/{{this._id}}" class="btn btn-dark">likes</button>
+    <span>0</span>
 </div>
 {{/each}}
 {{/if}}
+
+
+<script>
+    var http = new XMLHttpRequest();
+    const url = '/likes/{{this._id}}';
+</script>
