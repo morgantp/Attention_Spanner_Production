@@ -129,6 +129,8 @@ p {
 }
 
 .likesButton {
+    margin-left: 5px;
+    margin-bottom: 5px;
     font-family: 'Share Tech Mono', monospace;
     background-color: black;
     color: white;
@@ -138,6 +140,8 @@ p {
 }
 
 .likeCounter {
+    margin-left: 5px;
+    font-size: 20px;
     float: left;
     font-family: 'Share Tech Mono', monospace;
 }
