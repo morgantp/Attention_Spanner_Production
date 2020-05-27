@@ -1,5 +1,3 @@
-//console.log('test');
-
 const emailField = document.querySelector('#email');
 const usernameField = document.querySelector('#username');
 const signUpSubmit = document.querySelector('#signUpSubmit');
@@ -23,6 +21,7 @@ signUpSubmit.addEventListener('click', (e) =>{
     }    
 });
 
+// function which open and closes the sign up popup
 function openForm() {
     document.getElementById("createAccount").style.display = "table";
 }
